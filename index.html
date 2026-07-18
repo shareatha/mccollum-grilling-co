@@ -141,11 +141,11 @@
       display: grid;
       grid-template-columns: 1fr 2fr;
       background:
-        radial-gradient(ellipse 68% 60% at 67% 52%,
-          rgba(184,50,32,.54) 0%,
-          rgba(184,50,32,.22) 38%,
-          rgba(140,31,20,.06) 62%,
-          transparent 84%),
+        radial-gradient(ellipse 88% 80% at 67% 52%,
+          rgba(184,50,32,.18) 0%,
+          rgba(184,50,32,.07) 42%,
+          rgba(140,31,20,.02) 68%,
+          transparent 88%),
         #0d0d0d;
       overflow: hidden;
     }
@@ -924,8 +924,8 @@
   for (let i = 0; i < 18; i++) {
     const dot = document.createElement('div');
     dot.className = 'ember-dot';
-    dot.style.left = Math.random() * 60 + 20 + '%';
-    dot.style.bottom = Math.random() * 30 + '%';
+    dot.style.left = Math.random() * 88 + 6 + '%';
+    dot.style.bottom = Math.random() * 70 + '%';
     dot.style.animationDuration = (Math.random() * 4 + 3) + 's';
     dot.style.animationDelay = (Math.random() * 5) + 's';
     dot.style.width = dot.style.height = (Math.random() * 3 + 2) + 'px';

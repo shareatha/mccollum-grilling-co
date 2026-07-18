@@ -12,15 +12,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --charcoal:    #1C1C1C;
-      --ember:       #B83220;
-      --ember-dark:  #8C1F14;
-      --cream:       #F5EDD6;
-      --ash:         #6B6B6B;
-      --smoke:       #2E2E2E;
-      --white:       #F0EAE0;
-      --heading:     'Playfair Display', Georgia, serif;
-      --body:        'Inter', system-ui, sans-serif;
+      --charcoal:   #1C1C1C;
+      --ember:      #B83220;
+      --ember-dark: #8C1F14;
+      --cream:      #F5EDD6;
+      --ash:        #6B6B6B;
+      --smoke:      #2E2E2E;
+      --white:      #F0EAE0;
+      --heading:    'Playfair Display', Georgia, serif;
+      --body:       'Inter', system-ui, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -41,14 +41,9 @@
     .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
     .section { padding: clamp(4.5rem, 9vw, 7rem) 0; }
     .eyebrow {
-      font-family: var(--body);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--ember);
-      display: block;
-      margin-bottom: 1rem;
+      font-family: var(--body); font-size: .68rem; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--ember);
+      display: block; margin-bottom: 1rem;
     }
 
     /* ── Buttons ── */
@@ -59,8 +54,7 @@
       letter-spacing: .12em; text-transform: uppercase;
       padding: .75rem 1.625rem; border-radius: 3px;
       border: 2px solid var(--ember); text-decoration: none;
-      transition: background .2s, border-color .2s, transform .15s;
-      cursor: pointer;
+      transition: background .2s, border-color .2s, transform .15s; cursor: pointer;
     }
     .btn-ember:hover { background: var(--ember-dark); border-color: var(--ember-dark); transform: translateY(-1px); }
     .btn-outline-w {
@@ -85,10 +79,8 @@
       backdrop-filter: blur(10px);
     }
     .nav-inner {
-      width: 100%;
-      padding: 0 clamp(1.25rem, 3vw, 2.5rem);
-      display: flex; align-items: center; justify-content: space-between;
-      height: 68px;
+      width: 100%; padding: 0 clamp(1.25rem, 3vw, 2.5rem);
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
     }
     .nav-logo {
       font-family: var(--heading); font-size: 1.2rem; font-weight: 700;
@@ -110,25 +102,17 @@
       text-decoration: none; transition: background .2s;
     }
     .nav-book:hover { background: var(--ember-dark); }
-    .nav-ham {
-      display: none; background: none; border: none;
-      cursor: pointer; padding: .4rem; color: var(--white);
-    }
-    .nav-drawer {
-      display: none; background: #111; border-top: 1px solid #2a2a2a;
-      padding: 1rem 0 1.5rem;
-    }
+    .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: .4rem; color: var(--white); }
+    .nav-drawer { display: none; background: #111; border-top: 1px solid #2a2a2a; padding: 1rem 0 1.5rem; }
     .nav-drawer.open { display: block; }
     .nav-drawer-inner {
-      max-width: 1180px; margin: 0 auto;
-      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      padding: 0 clamp(1.25rem, 3vw, 2.5rem);
       display: flex; flex-direction: column; gap: .875rem;
     }
     .nav-drawer-inner a {
       font-size: .875rem; font-weight: 600; letter-spacing: .08em;
       text-transform: uppercase; color: rgba(240,234,224,.75);
-      text-decoration: none; padding: .5rem 0;
-      border-bottom: 1px solid #2a2a2a;
+      text-decoration: none; padding: .5rem 0; border-bottom: 1px solid #2a2a2a;
     }
     @media (max-width: 800px) {
       .nav-links { display: none; }
@@ -137,9 +121,7 @@
 
     /* ── HERO ── */
     #hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
+      min-height: 100vh; display: grid; grid-template-columns: 1fr 2fr;
       background:
         radial-gradient(ellipse 88% 80% at 67% 52%,
           rgba(184,50,32,.38) 0%,
@@ -151,35 +133,24 @@
     }
     .hero-left {
       display: flex; align-items: center;
-      padding: clamp(6rem, 10vw, 8rem) clamp(1rem, 2vw, 1.75rem) clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+      padding: clamp(6rem,10vw,8rem) clamp(1rem,2vw,1.75rem) clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,4rem);
       position: relative; z-index: 2;
     }
-    .hero-right {
-      position: relative; overflow: hidden;
-    }
-    #embers {
-      position: absolute; inset: 0;
-      pointer-events: none; overflow: hidden;
-    }
+    .hero-right { position: relative; overflow: hidden; }
+    #embers { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
     .ember-dot {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: #B83220;
-      animation: float-up linear infinite;
-      opacity: 0;
+      position: absolute; width: 3px; height: 3px; border-radius: 50%;
+      background: #B83220; animation: float-up linear infinite; opacity: 0;
     }
     @keyframes float-up {
-      0% { transform: translateY(0) translateX(0); opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.3; }
+      0%   { transform: translateY(0) translateX(0); opacity: 0; }
+      10%  { opacity: 0.8; }
+      90%  { opacity: 0.3; }
       100% { transform: translateY(-80vh) translateX(20px); opacity: 0; }
     }
     .hero-content { width: 100%; }
     .hero-tags {
-      display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.75rem;
-      flex-wrap: nowrap;
+      display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.75rem; flex-wrap: nowrap;
     }
     .hero-tag {
       font-size: .72rem; font-weight: 600; letter-spacing: .12em;
@@ -188,221 +159,145 @@
     }
     .hero-tag-sep { width: 1px; height: 13px; background: var(--ember); opacity: .55; flex-shrink: 0; }
     .hero-h1 {
-      font-family: var(--heading);
-      font-size: clamp(3.25rem, 6vw, 5.75rem);
+      font-family: var(--heading); font-size: clamp(3.25rem,6vw,5.75rem);
       font-weight: 900; line-height: 1.0; letter-spacing: -.01em;
       color: var(--white); margin: 0 0 1.75rem;
     }
     .hero-sub {
-      font-size: clamp(.9375rem, 1.5vw, 1rem);
-      color: rgba(240,234,224,.58); max-width: 100%;
-      line-height: 1.8; margin-bottom: 2.5rem;
+      font-size: clamp(.9375rem,1.5vw,1rem); color: rgba(240,234,224,.58);
+      max-width: 100%; line-height: 1.8; margin-bottom: 2.5rem;
     }
     .hero-btns { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 
     /* ── SERVICE STRIP ── */
-    #strip {
-      background: var(--ember);
-      padding: 1.125rem 0;
-    }
+    #strip { background: var(--ember); padding: 1.125rem 0; }
     .strip-inner {
-      max-width: 1180px; margin: 0 auto;
-      padding: 0 clamp(1.5rem, 5vw, 3rem);
-      display: flex; align-items: center; justify-content: center;
-      gap: 1rem; flex-wrap: wrap;
+      max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.5rem,5vw,3rem);
+      display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;
     }
-    .strip-label {
-      font-size: .62rem; font-weight: 700; letter-spacing: .22em;
-      text-transform: uppercase; color: rgba(240,234,224,.65);
-    }
+    .strip-label { font-size: .62rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(240,234,224,.65); }
     .strip-sep { color: rgba(240,234,224,.35); }
     .strip-areas {
       display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
-      font-size: .825rem; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase; color: var(--white);
+      font-size: .825rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--white);
     }
 
-    /* ── PHOTO PLACEHOLDER ── */
-    .ph {
-      background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
-      border: 1px solid #333; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; position: relative; overflow: hidden;
-    }
-    .ph::after {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 90%, rgba(184,50,32,.13) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .ph-icon { font-size: 1.5rem; opacity: .2; margin-bottom: .5rem; position: relative; z-index: 1; }
-    .ph-label {
-      font-size: .6rem; font-weight: 600; color: #555;
-      letter-spacing: .12em; text-transform: uppercase;
-      text-align: center; padding: .75rem; position: relative; z-index: 1;
-      line-height: 1.8;
-    }
-
-    /* ── ABOUT SECTION ── */
+    /* ── ABOUT ── */
     #about { background: var(--charcoal); }
     .about-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center;
+      gap: clamp(2.5rem,6vw,5.5rem); align-items: center;
     }
-    .about-text .eyebrow { margin-bottom: .75rem; }
+    .about-img { width: 100%; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
     .about-h2 {
-      font-family: var(--heading); font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-family: var(--heading); font-size: clamp(1.75rem,3.5vw,2.75rem);
       font-weight: 700; color: var(--white); line-height: 1.2; margin: 0 0 1.25rem;
     }
-    .about-p {
-      font-size: .9375rem; color: rgba(240,234,224,.58);
-      line-height: 1.85; margin-bottom: 2.25rem;
-    }
+    .about-p { font-size: .9375rem; color: rgba(240,234,224,.58); line-height: 1.85; margin-bottom: 2.25rem; }
     .about-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
-    .stat-num {
-      font-family: var(--heading); font-size: 2.25rem;
-      font-weight: 700; color: var(--ember); display: block; line-height: 1;
-    }
-    .stat-lbl {
-      font-size: .65rem; font-weight: 700; letter-spacing: .14em;
-      text-transform: uppercase; color: var(--ash); margin-top: .3rem; display: block;
-    }
-    .about-photo { width: 100%; aspect-ratio: 4/5; border-radius: 4px; }
+    .stat-num { font-family: var(--heading); font-size: 2.25rem; font-weight: 700; color: var(--ember); display: block; line-height: 1; }
+    .stat-lbl { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ash); margin-top: .3rem; display: block; }
 
     /* ── EVENTS ── */
     #events { background: #141414; }
-    .events-h2 {
-      font-family: var(--heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-      font-weight: 700; color: var(--white); margin: 0 0 3rem;
-    }
-    .events-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
+    .events-h2 { font-family: var(--heading); font-size: clamp(1.75rem,3.5vw,2.5rem); font-weight: 700; color: var(--white); margin: 0 0 3rem; }
+    .events-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
     .event-card {
-      background: var(--smoke); border: 1px solid #383838;
-      border-radius: 6px; padding: 2rem 1.75rem;
-      transition: border-color .25s, transform .25s;
+      background: var(--smoke); border: 1px solid #383838; border-radius: 6px;
+      padding: 2rem 1.75rem; transition: border-color .25s, transform .25s;
     }
     .event-card:hover { border-color: var(--ember); transform: translateY(-4px); }
     .event-icon { font-size: 1.75rem; display: block; margin-bottom: 1.125rem; }
-    .event-h3 {
-      font-family: var(--heading); font-size: 1.2rem; font-weight: 700;
-      color: var(--white); margin: 0 0 .75rem;
-    }
+    .event-h3 { font-family: var(--heading); font-size: 1.2rem; font-weight: 700; color: var(--white); margin: 0 0 .75rem; }
     .event-p { font-size: .875rem; color: rgba(240,234,224,.5); line-height: 1.8; }
 
     /* ── MENU ── */
     #menu { background: var(--charcoal); }
-    .menu-h2 {
-      font-family: var(--heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-      font-weight: 700; color: var(--white); margin: 0 0 2.5rem;
-    }
+    .menu-h2 { font-family: var(--heading); font-size: clamp(1.75rem,3.5vw,2.5rem); font-weight: 700; color: var(--white); margin: 0 0 2.5rem; }
     .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .menu-item {
       display: flex; gap: 1rem; align-items: flex-start;
-      background: var(--smoke); border: 1px solid #333;
-      border-radius: 6px; padding: 1rem; transition: border-color .2s;
+      background: var(--smoke); border: 1px solid #333; border-radius: 6px;
+      padding: 1rem; transition: border-color .2s;
     }
     .menu-item:hover { border-color: var(--ember); }
-    .menu-thumb { width: 82px; height: 82px; border-radius: 4px; flex-shrink: 0; }
-    .menu-thumb .ph-label { font-size: .5rem; }
-    .menu-name {
-      font-family: var(--heading); font-size: 1rem; font-weight: 700;
-      color: var(--white); margin: 0 0 .3rem;
-    }
+    .menu-thumb { width: 72px; height: 72px; border-radius: 4px; flex-shrink: 0; overflow: hidden; }
+    .menu-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .menu-name { font-family: var(--heading); font-size: 1rem; font-weight: 700; color: var(--white); margin: 0 0 .3rem; }
     .menu-desc { font-size: .8125rem; color: rgba(240,234,224,.48); line-height: 1.65; }
 
-    /* ── PROCESS ── */
+    /* ── HOW IT WORKS ── */
     #process { background: #141414; }
-    .process-h2 {
-      font-family: var(--heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-      font-weight: 700; color: var(--white); margin: 0 0 3rem;
+    .process-h2 { font-family: var(--heading); font-size: clamp(1.75rem,3.5vw,2.5rem); font-weight: 700; color: var(--white); margin: 0 0 2.5rem; }
+    .steps {
+      position: relative; max-width: 680px;
     }
-    .steps { max-width: 680px; }
-    .step {
-      display: flex; gap: 1.5rem; align-items: flex-start;
-      padding: 1.75rem 0; border-bottom: 1px solid #252525;
+    .steps::before {
+      content: ''; position: absolute; left: 19px; top: 44px;
+      height: calc(100% - 88px); width: 2px;
+      background: linear-gradient(to bottom, var(--ember) 0%, rgba(184,50,32,.12) 100%);
+      z-index: 0;
     }
-    .step:last-child { border-bottom: none; }
+    .step { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; }
     .step-num {
       width: 40px; height: 40px; border-radius: 50%;
-      background: var(--ember); color: var(--white);
+      background: var(--ember); color: #fff;
       font-size: .875rem; font-weight: 700;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; position: relative; z-index: 1;
     }
-    .step-title {
-      font-family: var(--heading); font-size: 1.175rem; font-weight: 700;
-      color: var(--white); margin: 0 0 .375rem;
-    }
+    .step-title { font-family: var(--heading); font-size: 1.175rem; font-weight: 700; color: var(--white); margin: 0 0 .375rem; }
     .step-desc { font-size: .875rem; color: rgba(240,234,224,.5); line-height: 1.75; margin: 0; }
 
     /* ── GALLERY ── */
     #gallery { background: var(--charcoal); }
-    .gallery-h2 {
-      font-family: var(--heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-      font-weight: 700; color: var(--white); margin: 0 0 2rem;
-    }
+    .gallery-h2 { font-family: var(--heading); font-size: clamp(1.75rem,3.5vw,2.5rem); font-weight: 700; color: var(--white); margin: 0 0 2rem; }
     .gallery-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-rows: 260px 260px;
-      gap: .625rem;
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 260px 260px; gap: .625rem;
     }
     .g-item { border-radius: 4px; overflow: hidden; }
     .g-item:first-child { grid-row: span 2; }
-    .g-ph { width: 100%; height: 100%; }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+    .g-item:hover img { transform: scale(1.04); }
 
     /* ── BOOKING ── */
-    #booking { background: var(--cream); padding: clamp(4rem, 8vw, 6rem) 0; }
-    #booking .eyebrow { color: var(--ember-dark); }
+    #booking { background: var(--cream); padding: clamp(4rem,8vw,6rem) 0; }
+    #booking .eyebrow { color: var(--ember-dark); text-align: center; }
     .booking-h2 {
-      font-family: var(--heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-family: var(--heading); font-size: clamp(1.75rem,3.5vw,2.5rem);
       font-weight: 700; color: var(--charcoal); text-align: center; margin: 0 0 .625rem;
     }
-    .booking-sub {
-      font-size: .9375rem; color: #7a6a58; text-align: center;
-      margin-bottom: 2.75rem; line-height: 1.7;
-    }
+    .booking-sub { font-size: .9375rem; color: #7a6a58; text-align: center; margin-bottom: 2.75rem; line-height: 1.7; }
     .form-card {
       background: #191919; border: 1px solid #303030; border-radius: 8px;
-      padding: clamp(1.75rem, 4vw, 3rem); max-width: 880px; margin: 0 auto;
+      padding: clamp(1.75rem,4vw,3rem); max-width: 880px; margin: 0 auto;
     }
     .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
     .f-group { display: flex; flex-direction: column; gap: .375rem; margin-bottom: 1.25rem; }
-    .f-label {
-      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: rgba(240,234,224,.5);
-    }
+    .f-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(240,234,224,.5); }
     .f-label sup { color: var(--ember); }
     .f-input {
       background: #252525; border: 1px solid #383838; border-radius: 4px;
       padding: .75rem 1rem; font-family: var(--body); font-size: .9375rem;
-      color: var(--white); outline: none; width: 100%;
-      transition: border-color .2s;
+      color: var(--white); outline: none; width: 100%; transition: border-color .2s;
     }
     .f-input:focus { border-color: var(--ember); }
     .f-input option { background: #252525; }
-    .cb-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-      gap: .625rem; margin-top: .5rem;
-    }
-    .cb-item {
-      display: flex; align-items: center; gap: .5rem;
-      font-size: .875rem; color: rgba(240,234,224,.65); cursor: pointer;
-    }
+    .cb-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(175px,1fr)); gap: .625rem; margin-top: .5rem; }
+    .cb-item { display: flex; align-items: center; gap: .5rem; font-size: .875rem; color: rgba(240,234,224,.65); cursor: pointer; }
     .cb-item input { width: 15px; height: 15px; accent-color: var(--ember); cursor: pointer; }
     .radio-row { display: flex; gap: 1.75rem; flex-wrap: wrap; margin-top: .5rem; }
-    .radio-item {
-      display: flex; align-items: center; gap: .5rem;
-      font-size: .875rem; color: rgba(240,234,224,.65); cursor: pointer;
-    }
+    .radio-item { display: flex; align-items: center; gap: .5rem; font-size: .875rem; color: rgba(240,234,224,.65); cursor: pointer; }
     .radio-item input { accent-color: var(--ember); cursor: pointer; }
     .f-textarea { resize: vertical; min-height: 110px; }
     .f-submit {
       width: 100%; background: var(--ember); color: var(--white);
       font-family: var(--body); font-size: .825rem; font-weight: 700;
-      letter-spacing: .15em; text-transform: uppercase;
-      padding: 1.125rem; border: none; border-radius: 4px;
-      cursor: pointer; margin-top: .5rem; transition: background .2s, transform .15s;
+      letter-spacing: .15em; text-transform: uppercase; padding: 1.125rem;
+      border: none; border-radius: 4px; cursor: pointer; margin-top: .5rem;
+      transition: background .2s, transform .15s;
     }
     .f-submit:hover { background: var(--ember-dark); transform: translateY(-1px); }
     .f-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
@@ -424,17 +319,13 @@
       font-family: var(--heading); font-size: 1.25rem; font-weight: 700;
       color: var(--white); text-decoration: none; display: inline-block; margin-bottom: 1.5rem;
     }
-    .footer-links {
-      display: flex; align-items: center; justify-content: center;
-      gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem;
-    }
+    .footer-links { display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
     .footer-links a {
-      font-size: .72rem; font-weight: 600; letter-spacing: .14em;
-      text-transform: uppercase; color: rgba(240,234,224,.4); text-decoration: none;
-      transition: color .2s;
+      font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(240,234,224,.4); text-decoration: none; transition: color .2s;
     }
     .footer-links a:hover { color: var(--ember); }
-    .footer-hr { border: none; border-top: 1px solid #222; margin: 0 auto 1.5rem; max-width: 1180px; }
+    .footer-hr { border: none; border-top: 1px solid #222; margin: 0 auto 1.5rem; }
     .footer-copy { font-size: .72rem; color: rgba(240,234,224,.2); line-height: 1.9; }
     .footer-copy a { color: rgba(240,234,224,.3); text-decoration: none; }
 
@@ -446,21 +337,16 @@
     .reveal-d3 { transition-delay: .3s; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .events-grid { grid-template-columns: 1fr 1fr; }
-    }
+    @media (max-width: 900px) { .events-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 700px) {
       #hero { grid-template-columns: 1fr; }
       .hero-left { padding: 7rem 1.5rem 4rem; }
       .hero-right { display: none; }
       .about-grid { grid-template-columns: 1fr; }
-      .about-photo { order: -1; aspect-ratio: 4/3; }
+      .about-img { aspect-ratio: 16/9; }
       .events-grid { grid-template-columns: 1fr; }
       .menu-grid { grid-template-columns: 1fr; }
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 180px 180px 180px;
-      }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px 180px; }
       .g-item:first-child { grid-row: span 1; grid-column: span 2; }
       .f-row { grid-template-columns: 1fr; }
       .about-stats { gap: 1.75rem; }
@@ -482,7 +368,7 @@
       <a href="#booking" class="nav-book">Book Now</a>
     </nav>
     <button class="nav-ham" id="ham" aria-label="Toggle menu">
-      <svg id="ham-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
       </svg>
     </button>
@@ -534,12 +420,9 @@
   <div class="strip-inner">
     <span class="strip-label">Now Serving</span>
     <div class="strip-areas">
-      <span>Delaware</span>
-      <span class="strip-sep">·</span>
-      <span>Maryland</span>
-      <span class="strip-sep">·</span>
-      <span>Pennsylvania</span>
-      <span class="strip-sep">·</span>
+      <span>Delaware</span><span class="strip-sep">·</span>
+      <span>Maryland</span><span class="strip-sep">·</span>
+      <span>Pennsylvania</span><span class="strip-sep">·</span>
       <span>New Jersey</span>
     </div>
   </div>
@@ -550,10 +433,12 @@
 <section id="about" class="section">
   <div class="wrap">
     <div class="about-grid">
-
-      <div class="about-text reveal">
+      <div class="about-img reveal">
+        <img src="images/grill-master.png" alt="McCollum Grilling Co. Grill Master" />
+      </div>
+      <div class="reveal reveal-d1">
         <span class="eyebrow">The Grill Master</span>
-        <h2 class="about-h2">Real BBQ. Right<br>Where You Are.</h2>
+        <h2 class="about-h2">Real BBQ. Right Where You Are.</h2>
         <p class="about-p">
           We don't do catering trays and warming pans. McCollum Grilling Co. brings the whole experience — the smoke, the sizzle, the smell — fresh to your venue. Every event is cooked on-site so your guests get BBQ at its absolute best.
         </p>
@@ -572,44 +457,32 @@
           </div>
         </div>
       </div>
-
-      <div class="reveal reveal-d2">
-        <div class="ph about-photo">
-          <span class="ph-icon">🔥</span>
-          <span class="ph-label">[PHOTO: Grill Master]<br>Action shot at the grill</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 
 <!-- ══════════════════════════════ EVENTS ══════════════════════════════ -->
-<section id="events" class="section">
+<section id="events" class="section" style="background:#141414;">
   <div class="wrap">
     <span class="eyebrow reveal">What We Do</span>
-    <h2 class="events-h2 reveal">Every Occasion.<br>One Grill Master.</h2>
+    <h2 class="events-h2 reveal">Every Occasion. One Grill Master.</h2>
     <div class="events-grid">
-
       <div class="event-card reveal">
         <span class="event-icon">🎉</span>
         <h3 class="event-h3">Private Parties</h3>
-        <p class="event-p">Birthdays, cookouts, block parties, family reunions — we handle everything we need and leave your guests talking about the food long after.</p>
+        <p class="event-p">Birthdays, cookouts, block parties, family reunions — we handle the grill so you can enjoy your own event.</p>
       </div>
-
       <div class="event-card reveal reveal-d1">
         <span class="event-icon">💍</span>
         <h3 class="event-h3">Weddings</h3>
-        <p class="event-p">Give your guests an unforgettable experience. On-site BBQ at a wedding is a statement — smoky, festive, and absolutely delicious.</p>
+        <p class="event-p">On-site BBQ at a wedding is a statement. Smoky, festive, and absolutely delicious for every guest.</p>
       </div>
-
       <div class="event-card reveal reveal-d2">
         <span class="event-icon">🏢</span>
         <h3 class="event-h3">Corporate Events</h3>
-        <p class="event-p">Company cookouts, team appreciation days, and client events. We handle the setup, the grill, and the takedown — you just enjoy it.</p>
+        <p class="event-p">Company cookouts, team appreciation days, and client events. Setup, grill, and takedown — fully handled.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -620,68 +493,53 @@
   <div class="wrap">
     <span class="eyebrow reveal">Get The Grill</span>
     <h2 class="menu-h2 reveal">Signature Eats</h2>
-    <p style="font-size:.9375rem;color:rgba(240,234,224,.5);margin-bottom:2.5rem;max-width:560px;" class="reveal">
-      From St. Louis style ribs to smoked turkey, every dish is cooked fresh — with the flavors and techniques that put McCollum on the map.
-    </p>
     <div class="menu-grid">
 
       <div class="menu-item reveal">
-        <div class="ph menu-thumb">
-          <span class="ph-label">[PHOTO:<br>St. Louis Ribs]</span>
-        </div>
-        <div class="menu-text">
+        <div class="menu-thumb"><img src="images/stlouis-done.png" alt="St. Louis Style Ribs" /></div>
+        <div>
           <p class="menu-name">St. Louis Style Ribs</p>
-          <p class="menu-desc">Slow-smoked, fall-off-the-bone ribs with a signature dry rub finish.</p>
+          <p class="menu-desc">Slow-smoked, fall-off-the-bone</p>
         </div>
       </div>
 
       <div class="menu-item reveal reveal-d1">
-        <div class="ph menu-thumb">
-          <span class="ph-label">[PHOTO:<br>Grilled Chicken]</span>
-        </div>
-        <div class="menu-text">
+        <div class="menu-thumb"><img src="images/whole-chicken.png" alt="Grilled Chicken" /></div>
+        <div>
           <p class="menu-name">Grilled Chicken</p>
-          <p class="menu-desc">Seasoned and flame-grilled to order. Crispy skin, juicy center.</p>
+          <p class="menu-desc">Seasoned, fire-kissed, never dry</p>
         </div>
       </div>
 
       <div class="menu-item reveal">
-        <div class="ph menu-thumb">
-          <span class="ph-label">[PHOTO:<br>Smoked Turkey]</span>
-        </div>
-        <div class="menu-text">
+        <div class="menu-thumb"><img src="images/smoked-turkey.png" alt="Smoked Turkey" /></div>
+        <div>
           <p class="menu-name">Smoked Turkey</p>
-          <p class="menu-desc">Whole smoked turkey with rich wood-fired depth in every bite.</p>
+          <p class="menu-desc">Whole or sliced, deeply seasoned</p>
         </div>
       </div>
 
       <div class="menu-item reveal reveal-d1">
-        <div class="ph menu-thumb">
-          <span class="ph-label">[PHOTO:<br>Grilled Seafood]</span>
-        </div>
-        <div class="menu-text">
-          <p class="menu-name">Grilled Seafood &amp; Sides</p>
-          <p class="menu-desc">Fresh catch seasoned and grilled with sides that complete the plate.</p>
+        <div class="menu-thumb"><img src="images/seafood.png" alt="Grilled Seafood" /></div>
+        <div>
+          <p class="menu-name">Grilled Seafood</p>
+          <p class="menu-desc">Lobster tails, jerk salmon &amp; more</p>
         </div>
       </div>
 
       <div class="menu-item reveal">
-        <div class="ph menu-thumb">
-          <span class="ph-label">[PHOTO:<br>Corn & Veggies]</span>
-        </div>
-        <div class="menu-text">
+        <div class="menu-thumb"><img src="images/grilled-corn.png" alt="Grilled Corn & Veggies" /></div>
+        <div>
           <p class="menu-name">Grilled Corn &amp; Veggies</p>
-          <p class="menu-desc">Charred and seasoned vegetables — hearty enough to stand alone.</p>
+          <p class="menu-desc">Charred and seasoned to perfection</p>
         </div>
       </div>
 
       <div class="menu-item reveal reveal-d1">
-        <div class="ph menu-thumb">
-          <span class="ph-label">[PHOTO:<br>Peach Cobbler]</span>
-        </div>
-        <div class="menu-text">
+        <div class="menu-thumb"><img src="images/peach-cobbler.png" alt="Smoked Peach Cobbler" /></div>
+        <div>
           <p class="menu-name">Smoked Peach Cobbler</p>
-          <p class="menu-desc">Dessert cooked right on the grill. Warm, smoky, sweet perfection.</p>
+          <p class="menu-desc">Dessert cooked right on the grill</p>
         </div>
       </div>
 
@@ -690,82 +548,56 @@
 </section>
 
 
-<!-- ══════════════════════════════ PROCESS ══════════════════════════════ -->
+<!-- ══════════════════════════════ HOW IT WORKS ══════════════════════════════ -->
 <section id="process" class="section">
   <div class="wrap">
     <span class="eyebrow reveal">Simple Process</span>
     <h2 class="process-h2 reveal">From Inquiry to Cookout</h2>
     <div class="steps reveal">
-
       <div class="step">
         <div class="step-num">1</div>
         <div>
           <p class="step-title">Submit Your Request</p>
-          <p class="step-desc">Fill out the form below with your event date, location, estimated headcount, and any menu preferences. Takes two minutes.</p>
+          <p class="step-desc">Fill out the booking form with your event date, location, headcount, and menu preferences. Takes two minutes.</p>
         </div>
       </div>
-
       <div class="step">
         <div class="step-num">2</div>
         <div>
           <p class="step-title">Get Your Custom Quote</p>
-          <p class="step-desc">We'll review and send you a personalized quote within 24 hours — no surprises, no hidden fees.</p>
+          <p class="step-desc">We'll review your details and send a personalized quote within 24 hours — no surprises, no hidden fees.</p>
         </div>
       </div>
-
       <div class="step">
         <div class="step-num">3</div>
         <div>
           <p class="step-title">Lock It In</p>
-          <p class="step-desc">Confirm your details and place your deposit to secure your date. We handle everything from there.</p>
+          <p class="step-desc">Confirm your details and place your deposit to secure your date. We'll handle everything from there.</p>
         </div>
       </div>
-
       <div class="step">
         <div class="step-num">4</div>
         <div>
           <p class="step-title">We Show Up, You Enjoy</p>
-          <p class="step-desc">We arrive early, set up, grill fresh all event long, and clean up when done. Your only job is eating well.</p>
+          <p class="step-desc">We arrive early, set up the grill, cook fresh all event long, and clean up when done. Your only job is eating well.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 
 <!-- ══════════════════════════════ GALLERY ══════════════════════════════ -->
-<section id="gallery" class="section">
+<section id="gallery" class="section" style="background:#141414;">
   <div class="wrap">
-    <span class="eyebrow reveal">The Award &amp; Grill</span>
-    <h2 class="gallery-h2 reveal">Recent Events</h2>
+    <span class="eyebrow reveal">Recent Events</span>
+    <h2 class="gallery-h2 reveal">The Grill In Action</h2>
     <div class="gallery-grid reveal">
-      <div class="g-item">
-        <div class="ph g-ph">
-          <span class="ph-icon">🔥</span>
-          <span class="ph-label">[PHOTO: Live Fire]<br>Grill in action</span>
-        </div>
-      </div>
-      <div class="g-item">
-        <div class="ph g-ph">
-          <span class="ph-label">[PHOTO: St. Louis Style]<br>Rack of ribs</span>
-        </div>
-      </div>
-      <div class="g-item">
-        <div class="ph g-ph">
-          <span class="ph-label">[PHOTO: Smoked Turkey]<br>Whole bird plated</span>
-        </div>
-      </div>
-      <div class="g-item">
-        <div class="ph g-ph">
-          <span class="ph-label">[PHOTO: Private Party]<br>Event setup</span>
-        </div>
-      </div>
-      <div class="g-item">
-        <div class="ph g-ph">
-          <span class="ph-label">[PHOTO: Grill Master]<br>Working the grill</span>
-        </div>
-      </div>
+      <div class="g-item"><img src="images/live-fire.png" alt="Live Fire" /></div>
+      <div class="g-item"><img src="images/stlouis-raw.png" alt="St. Louis Style" /></div>
+      <div class="g-item"><img src="images/smoked-turkey.png" alt="Smoked Turkey" /></div>
+      <div class="g-item"><img src="images/fathers-day.png" alt="Private Party" /></div>
+      <div class="g-item"><img src="images/grill-master.png" alt="Grill Master" /></div>
     </div>
   </div>
 </section>
@@ -774,44 +606,42 @@
 <!-- ══════════════════════════════ BOOKING ══════════════════════════════ -->
 <section id="booking">
   <div class="wrap">
-    <span class="eyebrow" style="text-align:center;display:block;">Ready To Book</span>
+    <span class="eyebrow">Ready To Book</span>
     <h2 class="booking-h2">Let's Make Your Event Unforgettable</h2>
     <p class="booking-sub">Fill out the form below and we'll get back to you within 24 hours with a custom quote.</p>
 
     <div class="form-card">
       <div id="form-success" class="f-success">
-        <h3>You're Locked In 🔥</h3>
-        <p>We received your request and will be in touch within 24 hours with a custom quote.</p>
+        <h3>We Got You! 🔥</h3>
+        <p>Thanks for reaching out. McCollum Grilling Co. will be in touch within 24 hours.</p>
       </div>
-      <div id="form-error" class="f-error">
-        Something went wrong. Please try again or email us at <strong>events@mccollumgrillingco.com</strong>
-      </div>
+      <div id="form-error" class="f-error">Please fill in all required fields marked with *.</div>
 
-      <form id="booking-form">
+      <form id="booking-form" novalidate>
         <div class="f-row">
-          <div class="f-group" style="margin-bottom:0;">
+          <div class="f-group" style="margin-bottom:0">
             <label class="f-label">First Name <sup>*</sup></label>
             <input type="text" name="firstName" class="f-input" placeholder="First name" required />
           </div>
-          <div class="f-group" style="margin-bottom:0;">
+          <div class="f-group" style="margin-bottom:0">
             <label class="f-label">Last Name <sup>*</sup></label>
             <input type="text" name="lastName" class="f-input" placeholder="Last name" required />
           </div>
         </div>
 
         <div class="f-row">
-          <div class="f-group" style="margin-bottom:0;">
+          <div class="f-group" style="margin-bottom:0">
             <label class="f-label">Email <sup>*</sup></label>
             <input type="email" name="email" class="f-input" placeholder="your@email.com" required />
           </div>
-          <div class="f-group" style="margin-bottom:0;">
+          <div class="f-group" style="margin-bottom:0">
             <label class="f-label">Phone</label>
             <input type="tel" name="phone" class="f-input" placeholder="(555) 000-0000" />
           </div>
         </div>
 
         <div class="f-row">
-          <div class="f-group" style="margin-bottom:0;">
+          <div class="f-group" style="margin-bottom:0">
             <label class="f-label">Event Type <sup>*</sup></label>
             <select name="eventType" class="f-input" required>
               <option value="" disabled selected>Select event type</option>
@@ -821,27 +651,27 @@
               <option>Other</option>
             </select>
           </div>
-          <div class="f-group" style="margin-bottom:0;">
+          <div class="f-group" style="margin-bottom:0">
             <label class="f-label">Event State <sup>*</sup></label>
             <select name="eventState" class="f-input" required>
               <option value="" disabled selected>Select state</option>
-              <option>Delaware (DE)</option>
-              <option>Maryland (MD)</option>
-              <option>Pennsylvania (PA)</option>
-              <option>New Jersey (NJ)</option>
+              <option>Delaware</option>
+              <option>Maryland</option>
+              <option>Pennsylvania</option>
+              <option>New Jersey</option>
               <option>Other</option>
             </select>
           </div>
         </div>
 
         <div class="f-row">
-          <div class="f-group" style="margin-bottom:0;">
+          <div class="f-group" style="margin-bottom:0">
             <label class="f-label">Event Date <sup>*</sup></label>
             <input type="date" name="eventDate" class="f-input" required />
           </div>
-          <div class="f-group" style="margin-bottom:0;">
-            <label class="f-label">Expected Headcount</label>
-            <select name="headcount" class="f-input">
+          <div class="f-group" style="margin-bottom:0">
+            <label class="f-label">Expected Headcount <sup>*</sup></label>
+            <select name="headcount" class="f-input" required>
               <option value="" disabled selected>Select range</option>
               <option>Under 25</option>
               <option>25 – 50</option>
@@ -858,8 +688,8 @@
             <label class="cb-item"><input type="checkbox" name="menu" value="St. Louis Ribs" /> St. Louis Ribs</label>
             <label class="cb-item"><input type="checkbox" name="menu" value="Grilled Chicken" /> Grilled Chicken</label>
             <label class="cb-item"><input type="checkbox" name="menu" value="Smoked Turkey" /> Smoked Turkey</label>
-            <label class="cb-item"><input type="checkbox" name="menu" value="Corn & Veggies" /> Corn &amp; Veggies</label>
             <label class="cb-item"><input type="checkbox" name="menu" value="Smoked Peach Cobbler" /> Smoked Peach Cobbler</label>
+            <label class="cb-item"><input type="checkbox" name="menu" value="Corn & Veggies" /> Corn &amp; Veggies</label>
             <label class="cb-item"><input type="checkbox" name="menu" value="Custom Menu" /> Custom Menu</label>
           </div>
         </div>
@@ -873,7 +703,7 @@
           </div>
         </div>
 
-        <div class="f-group" style="margin-bottom:1.5rem;">
+        <div class="f-group" style="margin-bottom:1.5rem">
           <label class="f-label">Tell Us About Your Event</label>
           <textarea name="details" class="f-input f-textarea" placeholder="Share any details — venue, vibe, special requests, dietary needs…"></textarea>
         </div>
@@ -899,7 +729,7 @@
     </div>
     <hr class="footer-hr" />
     <p class="footer-copy">
-      © 2025 McCollum Grilling Co. · Traveling Grill Master · DE · MD · PA · NJ<br>
+      © 2026 McCollum Grilling Co. · Traveling Grill Master · DE · MD · PA · NJ<br>
       <a href="#">Creative and Website by RIL Professional Services</a>
     </p>
   </div>
@@ -934,21 +764,35 @@
 
   // ── Scroll reveal ──
   const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
   // ── Booking form ──
   const SCRIPT_URL = 'https://script.google.com/macros/s/PASTE_SCRIPT_URL_HERE/exec';
+
   document.getElementById('booking-form').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const form = e.target;
+    const errBox = document.getElementById('form-error');
     const btn = document.getElementById('submit-btn');
+    errBox.style.display = 'none';
+
+    // Client-side required field validation
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(field => {
+      if (!field.value.trim()) { field.style.borderColor = '#c0392b'; valid = false; }
+      else field.style.borderColor = '';
+    });
+    if (!valid) { errBox.style.display = 'block'; return; }
+
     btn.disabled = true;
     btn.textContent = 'Sending…';
-    document.getElementById('form-error').style.display = 'none';
 
-    const fd = new FormData(e.target);
-    const menuInterests = [...document.querySelectorAll('input[name="menu"]:checked')].map(cb => cb.value);
+    const fd = new FormData(form);
+    const menuInterests = [...form.querySelectorAll('input[name="menu"]:checked')].map(c => c.value);
+
     const payload = {
       firstName:     fd.get('firstName'),
       lastName:      fd.get('lastName'),
@@ -965,15 +809,15 @@
 
     try {
       await fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
+        method: 'POST', mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
-      e.target.style.display = 'none';
+      form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     } catch {
-      document.getElementById('form-error').style.display = 'block';
+      errBox.textContent = 'Something went wrong. Please email us at events@mccollumgrillingco.com';
+      errBox.style.display = 'block';
       btn.disabled = false;
       btn.textContent = 'Request My Quote →';
     }

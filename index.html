@@ -774,7 +774,7 @@
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
   // ── Booking form ──
-  const SCRIPT_URL = 'https://script.google.com/macros/s/PASTE_SCRIPT_URL_HERE/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzCTEMGgQGsYWBnYZBxEL_K8CLOotZAByopAniFZVxsxOGzKSkPi_kw8C2YxmggdsGc/exec';
 
   document.getElementById('booking-form').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -813,11 +813,33 @@
     };
 
     try {
-      await fetch(SCRIPT_URL, {
-        method: 'POST', mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      await Promise.all([
+    fetch('https://script.google.com/macros/s/AKfycbzCTEMGgQGsYWBnYZBxEL_K8CLOotZAByopAniFZVxsxOGzKSkPi_kw8C2YxmggdsGc/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }),
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '4e2c6146-6094-4118-8e5d-f793d715e116',
+        subject: `New Booking Request — ${payload.firstName} ${payload.lastName}`,
+        from_name: 'McCollum Grilling Co. Website',
+        name: `${payload.firstName} ${payload.lastName}`,
+        email: payload.email,
+        phone: payload.phone,
+        event_type: payload.eventType,
+        event_state: payload.eventState,
+        event_date: payload.eventDate,
+        headcount: payload.headcount,
+        menu_interests: payload.menuInterests,
+        preferred_contact: payload.preferredContact,
+        about_event: payload.aboutEvent
+      })
+    })
+  ]);
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     } catch {

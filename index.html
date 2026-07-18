@@ -85,8 +85,8 @@
       backdrop-filter: blur(10px);
     }
     .nav-inner {
-      max-width: 1180px; margin: 0 auto;
-      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      padding: 0 clamp(1.25rem, 3vw, 2.5rem);
       display: flex; align-items: center; justify-content: space-between;
       height: 68px;
     }
@@ -140,7 +140,13 @@
       min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 2fr;
-      background: #111;
+      background:
+        radial-gradient(ellipse 68% 60% at 67% 52%,
+          rgba(184,50,32,.54) 0%,
+          rgba(184,50,32,.22) 38%,
+          rgba(140,31,20,.06) 62%,
+          transparent 84%),
+        #0d0d0d;
       overflow: hidden;
     }
     .hero-left {
@@ -150,7 +156,6 @@
     }
     .hero-right {
       position: relative; overflow: hidden;
-      background: radial-gradient(ellipse 92% 72% at 48% 54%, rgba(184,50,32,.42) 0%, rgba(184,50,32,.18) 38%, rgba(140,31,20,.07) 62%, transparent 82%);
     }
     #embers {
       position: absolute; inset: 0;

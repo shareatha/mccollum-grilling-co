@@ -183,13 +183,13 @@
     }
     .hero-tag {
       font-size: .72rem; font-weight: 600; letter-spacing: .12em;
-      text-transform: uppercase; color: rgba(240,234,224,.62);
+      text-transform: uppercase; color: var(--ember);
       white-space: nowrap; display: flex; align-items: center; gap: .4rem;
     }
-    .hero-tag-sep { width: 1px; height: 13px; background: rgba(240,234,224,.2); flex-shrink: 0; }
+    .hero-tag-sep { width: 1px; height: 13px; background: var(--ember); opacity: .55; flex-shrink: 0; }
     .hero-h1 {
       font-family: var(--heading);
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-size: clamp(3.25rem, 6vw, 5.75rem);
       font-weight: 900; line-height: 1.0; letter-spacing: -.01em;
       color: var(--white); margin: 0 0 1.75rem;
     }
@@ -507,7 +507,7 @@
       <div class="hero-tags">
         <span class="hero-tag">🔥 Fresh BBQ Grilled On-Site</span>
         <span class="hero-tag-sep"></span>
-        <span class="hero-tag">🔥 We Come To You</span>
+        <span class="hero-tag">We Come To You</span>
       </div>
       <h1 class="hero-h1">
         We Bring<br>

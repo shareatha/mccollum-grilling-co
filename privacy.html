@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | McCollum Grilling Co.</title>
+  <meta name="description" content="Privacy Policy for McCollum Grilling Co. — how we collect, use, and protect information submitted through our booking form." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --charcoal:   #1C1C1C;
+      --ember:      #B83220;
+      --ember-dark: #8C1F14;
+      --cream:      #F5EDD6;
+      --ash:        #6B6B6B;
+      --smoke:      #2E2E2E;
+      --white:      #F0EAE0;
+      --heading:    'Playfair Display', Georgia, serif;
+      --body:       'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      background: var(--charcoal);
+      color: var(--white);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--charcoal); }
+    ::-webkit-scrollbar-thumb { background: var(--ember); border-radius: 3px; }
+
+    /* ── Utilities ── */
+    .ember-text { color: var(--ember); }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
+    .section { padding: clamp(4.5rem, 9vw, 7rem) 0; }
+    .eyebrow {
+      font-family: var(--body); font-size: .68rem; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--ember);
+      display: block; margin-bottom: 1rem;
+    }
+
+    /* ── Buttons ── */
+    .btn-ember {
+      display: inline-flex; align-items: center; gap: .375rem;
+      background: var(--ember); color: var(--white);
+      font-family: var(--body); font-weight: 700; font-size: .8rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: .75rem 1.625rem; border-radius: 3px;
+      border: 2px solid var(--ember); text-decoration: none;
+      transition: background .2s, border-color .2s, transform .15s; cursor: pointer;
+    }
+    .btn-ember:hover { background: var(--ember-dark); border-color: var(--ember-dark); transform: translateY(-1px); }
+
+    /* ── NAV ── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background .3s ease, box-shadow .3s ease;
+    }
+    #nav.scrolled {
+      background: rgba(20,20,20,.97);
+      box-shadow: 0 2px 24px rgba(0,0,0,.5);
+      backdrop-filter: blur(10px);
+    }
+    .nav-inner {
+      width: 100%; padding: 0 clamp(1.25rem, 3vw, 2.5rem);
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--heading); font-size: 1.2rem; font-weight: 700;
+      color: var(--white); text-decoration: none; letter-spacing: .01em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      font-size: .775rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(240,234,224,.8);
+      text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--ember); }
+    .nav-book {
+      background: var(--ember); color: var(--white);
+      font-family: var(--body); font-weight: 700; font-size: .775rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .55rem 1.25rem; border-radius: 3px;
+      text-decoration: none; transition: background .2s;
+    }
+    .nav-book:hover { background: var(--ember-dark); }
+    .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: .4rem; color: var(--white); }
+    .nav-drawer { display: none; background: #111; border-top: 1px solid #2a2a2a; padding: 1rem 0 1.5rem; }
+    .nav-drawer.open { display: block; }
+    .nav-drawer-inner {
+      padding: 0 clamp(1.25rem, 3vw, 2.5rem);
+      display: flex; flex-direction: column; gap: .875rem;
+    }
+    .nav-drawer-inner a {
+      font-size: .875rem; font-weight: 600; letter-spacing: .08em;
+      text-transform: uppercase; color: rgba(240,234,224,.75);
+      text-decoration: none; padding: .5rem 0; border-bottom: 1px solid #2a2a2a;
+    }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .nav-ham { display: flex; }
+    }
+
+    /* ── PAGE HEADER ── */
+    #page-header {
+      padding: clamp(8rem,14vw,10rem) 0 clamp(2.5rem,5vw,3.5rem);
+      background: linear-gradient(160deg, #1a0a00 0%, #1C1C1C 60%, #111 100%);
+    }
+    .ph-h1 {
+      font-family: var(--heading); font-size: clamp(2rem,4.5vw,3.25rem);
+      font-weight: 900; color: var(--white); margin: 0 0 .75rem;
+    }
+    .ph-updated { font-size: .8125rem; color: rgba(240,234,224,.45); }
+
+    /* ── LEGAL CONTENT ── */
+    #legal { background: #141414; }
+    .legal-inner { max-width: 780px; margin: 0 auto; }
+    .legal-inner h2 {
+      font-family: var(--heading); font-size: clamp(1.25rem,2.5vw,1.6rem);
+      font-weight: 700; color: var(--white); margin: 2.5rem 0 1rem;
+    }
+    .legal-inner h2:first-child { margin-top: 0; }
+    .legal-inner p { font-size: .9375rem; color: rgba(240,234,224,.62); line-height: 1.9; }
+    .legal-inner p + p { margin-top: 1.125rem; }
+    .legal-inner ul { margin: 1rem 0 0; padding-left: 1.25rem; }
+    .legal-inner li {
+      font-size: .9375rem; color: rgba(240,234,224,.62); line-height: 1.85;
+      margin-bottom: .5rem;
+    }
+    .legal-inner a { color: var(--ember); text-decoration: none; }
+    .legal-inner a:hover { text-decoration: underline; }
+    .legal-inner strong { color: var(--white); }
+
+    /* ── FOOTER ── */
+    #footer { background: #0f0f0f; padding: 3rem 0 2rem; text-align: center; }
+    .footer-logo {
+      font-family: var(--heading); font-size: 1.25rem; font-weight: 700;
+      color: var(--white); text-decoration: none; display: inline-block; margin-bottom: 1.5rem;
+    }
+    .footer-links { display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .footer-links a {
+      font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(240,234,224,.4); text-decoration: none; transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--ember); }
+    .footer-hr { border: none; border-top: 1px solid #222; margin: 0 auto 1.5rem; }
+    .footer-copy { font-size: .72rem; color: rgba(240,234,224,.2); line-height: 1.9; }
+    .footer-copy a { color: rgba(240,234,224,.3); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+<header id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">McCollum <span class="ember-text">Grilling</span> Co.</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="index.html#booking">Contact</a>
+      <a href="index.html#booking" class="nav-book">Book Now</a>
+    </nav>
+    <button class="nav-ham" id="ham" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+      </svg>
+    </button>
+  </div>
+  <div class="nav-drawer" id="drawer">
+    <div class="nav-drawer-inner">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="index.html#booking">Contact</a>
+      <a href="index.html#booking" class="btn-ember" style="justify-content:center;margin-top:.5rem;">Book Now</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════ PAGE HEADER ══════════════════════════════ -->
+<section id="page-header">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1 class="ph-h1">Privacy Policy</h1>
+    <p class="ph-updated">Last updated: July 18, 2026</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════ LEGAL CONTENT ══════════════════════════════ -->
+<section id="legal" class="section">
+  <div class="wrap legal-inner">
+
+    <p>
+      McCollum Grilling Co. ("McCollum Grilling Co.," "MGC," "we," "us," or "our") operates this website and the booking form on it. This Privacy Policy explains what information we collect when you request a quote or contact us, how we use and store it, and the choices you have.
+    </p>
+    <p>
+      By submitting the booking form on this website, you agree to the collection and use of information as described in this policy.
+    </p>
+
+    <h2>Information We Collect</h2>
+    <p>
+      When you fill out our booking form to request a quote, we collect the information you provide, which may include:
+    </p>
+    <ul>
+      <li>First and last name</li>
+      <li>Email address</li>
+      <li>Phone number</li>
+      <li>Event type, state, and date</li>
+      <li>Expected headcount</li>
+      <li>Menu interests and any custom menu requests</li>
+      <li>Preferred contact method (email, phone, or Instagram DM)</li>
+      <li>Any additional details you share about your event</li>
+    </ul>
+    <p>
+      We do not collect payment information through this website, and we do not use cookies, analytics, or advertising trackers on this site.
+    </p>
+
+    <h2>How We Use Your Information</h2>
+    <p>
+      We use the information you submit solely to:
+    </p>
+    <ul>
+      <li>Respond to your quote request and follow up about your event</li>
+      <li>Plan menu, staffing, and logistics for your booking</li>
+      <li>Communicate with you before, during, and after your event</li>
+    </ul>
+    <p>
+      We do not sell, rent, or trade your personal information to third parties for marketing purposes.
+    </p>
+
+    <h2>How Your Information Is Stored</h2>
+    <p>
+      Booking form submissions are recorded in a private Google Sheet that is accessible only to authorized McCollum Grilling Co. admin team members. This sheet is not publicly accessible and is used internally to manage and respond to booking requests.
+    </p>
+    <p>
+      To make sure a submission isn't missed, a copy of each booking request is also sent as an email notification to our team through a third-party form-delivery service. That service transmits the notification but does not use your information for any purpose of its own.
+    </p>
+
+    <h2>Third-Party Services</h2>
+    <p>
+      We rely on the following third-party services to operate our booking form and store submissions. Each is bound by its own privacy practices:
+    </p>
+    <ul>
+      <li><strong>Google (Google Sheets / Google Workspace)</strong> — used to store and manage booking submissions. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+      <li><strong>Web3Forms</strong> — used to deliver an email notification of each booking request to our team. See <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">Web3Forms' Privacy Policy</a>.</li>
+    </ul>
+
+    <h2>Data Retention</h2>
+    <p>
+      We retain booking information for as long as reasonably necessary to manage your event and maintain business records, or until you request that we delete it. If you'd like your information removed sooner, contact us using the details below.
+    </p>
+
+    <h2>Your Choices</h2>
+    <p>
+      You may contact us at any time to:
+    </p>
+    <ul>
+      <li>Request a copy of the information we have on file for you</li>
+      <li>Correct inaccurate information</li>
+      <li>Request that we delete your information from our records</li>
+    </ul>
+    <p>
+      We'll respond to reasonable requests as quickly as we can.
+    </p>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      This website and booking form are intended for adults planning events and are not directed at children under 13. We do not knowingly collect personal information from children.
+    </p>
+
+    <h2>Security</h2>
+    <p>
+      We restrict access to booking submissions to authorized MGC admin team members and rely on the built-in security of the third-party platforms noted above. No method of storage or transmission over the internet is 100% secure, but we take reasonable steps to protect the information you share with us.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our practices. Any updates will be posted on this page with a revised "Last updated" date.
+    </p>
+
+    <h2>Contact Us</h2>
+    <p>
+      If you have questions about this Privacy Policy or how your information is handled, reach out to us at
+      <a href="mailto:events@mccollumgrillingco.com">events@mccollumgrillingco.com</a> or via Instagram
+      <a href="https://instagram.com/mccollumgrillingco" target="_blank" rel="noopener">@mccollumgrillingco</a>.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer id="footer">
+  <div class="wrap">
+    <a href="index.html" class="footer-logo">McCollum <span class="ember-text">Grilling</span> Co.</a>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="index.html#booking">Contact</a>
+      <a href="https://instagram.com/mccollumgrillingco" target="_blank" rel="noopener">Instagram</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <hr class="footer-hr" />
+    <p class="footer-copy">
+      © 2026 McCollum Grilling Co. · Traveling Grill Master · DE · MD · PA · NJ<br>
+      <a href="#">Creative and Website by RIL Professional Services</a>
+    </p>
+  </div>
+</footer>
+
+
+<script>
+  // ── Nav scroll ──
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // ── Hamburger ──
+  document.getElementById('ham').addEventListener('click', () => {
+    document.getElementById('drawer').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
